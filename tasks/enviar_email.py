@@ -37,10 +37,18 @@ class EnviarEmail:
                
                 assunto = f"Confirmação de Endereço - CEP {cep}"
                 corpo_email = self.criar_corpo_email(cep, estado, cidade, bairro, rua, numero)
-                
-               
+                               
                 self.enviar_email(self.EMAIL_DESTINATARIO, assunto, corpo_email)
-                
+                try:
+                    self.enviar_email(self.EMAIL_DESTINATARIO, assunto, corpo_email)
+                    df.at[index, "Status Envio"] = "Enviado"  
+                except Exception as e:
+                    df.at[index, "Status Envio"] = "Falha"  
+                    print(f"Falha ao enviar e-mail para {self.EMAIL_DESTINATARIO}: {e}")
+                    
+            df.to_csv(self.CSV_PATH_EXTRAIDOS, index=False, encoding="ansi")
+            print("Status de envio atualizados no arquivo CSV.")
+            
         except Exception as e:
             raise Exception(f"Erro ao enviar e-mails: {e}")
         

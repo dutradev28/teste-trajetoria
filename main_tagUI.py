@@ -1,22 +1,17 @@
-from tasks.consulta_cep import ConsultaCEP
+from tasks.tagui_task import ConsultaCEPtagUI  
 from tasks.enviar_email import EnviarEmail
 from tasks.criar_relatorio import RelatorioPDF
 
 def executar_consulta_ceps():
     """
-    Executa a consulta de CEPs usando o driver Selenium.
+    Executa a consulta de CEPs usando o TagUI.
     """
     try:
-        consulta_cep = ConsultaCEP()
-        driver = consulta_cep.criar_driver()
-        consulta_cep.interar_ceps(driver)
-        print("Consulta de CEPs concluída com sucesso.")        
+        consulta_cep = ConsultaCEPtagUI() 
+        consulta_cep.consultar_ceps()  
+        print("Consulta de CEPs concluída com sucesso.")
     except Exception as e:
         raise Exception(f"Erro ao consultar CEPs: {e}")
-    finally:
-        if 'driver' in locals() and driver:
-            driver.quit()
-            print("Driver encerrado com sucesso.")
 
 def executar_envio_emails():
     """
