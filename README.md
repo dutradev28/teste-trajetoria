@@ -106,4 +106,12 @@ O projeto pode ser executado de duas formas:
 4. **Logs Detalhados**:
    - Implementar logs mais detalhados para facilitar a depuração.
 
+5. **Envio de dados**:
+    - Os dados podem ser armazenados em um banco de dados MySQL, com o desenvolvimento de uma API REST para permitir a comunicação eficiente entre o sistema e os clientes. Isso garante que os dados possam ser facilmente acessados e manipulados, proporcionando uma solução robusta e escalável.
+
+6. **Orquestração com Celery**:
+    - Para ambientes de produção, a utilização do Celery para orquestrar as tarefas automatizadas é uma excelente opção. O Celery permite a execução paralela de múltiplas tarefas e a gestão de concorrência, o que melhora a eficiência e o desempenho do sistema. Além disso, a integração com o Flower para monitoramento fornece métricas essenciais sobre a execução das tarefas, como tempo de processamento, falhas e logs. Essas métricas podem ser visualizadas em tempo real através de um dashboard, que pode ser configurado no Grafana ou utilizando o Dash (Plotly), permitindo um controle completo sobre o processo de automação.
+
+7. **Integração com Web App ou Aplicativo Mobile/FastAPI/Webhook**:
+    - Uma API desenvolvida com FastAPI pode ser integrada a uma plataforma de web app ou aplicativo mobile, proporcionando uma interface de fácil interação para os usuários. Por meio dessa integração, o cliente pode fazer solicitações para que o Celery execute as tarefas necessárias. O status de execução pode ser enviado em tempo real ao cliente através de um webhook, garantindo que o usuário seja constantemente atualizado sobre o progresso da tarefa. Essa abordagem permite uma comunicação eficiente e uma experiência de usuário mais fluida e interativa.
 ---
