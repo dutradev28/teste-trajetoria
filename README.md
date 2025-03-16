@@ -10,8 +10,7 @@ Este projeto automatiza a consulta de informações de CEPs (Estado, Cidade, Bai
 2. [Funcionalidades](#funcionalidades)
 3. [Configuração do Ambiente](#configuração-do-ambiente)
 4. [Execução do Projeto](#execução-do-projeto)
-5. [Estrutura do Projeto](#estrutura-do-projeto)
-6. [Melhorias e Limitações](#melhorias-e-limitações)
+5. [Melhorias e Limitações](#melhorias-e-limitações)
 
 ---
 
@@ -78,28 +77,6 @@ O projeto pode ser executado de duas formas:
      python main_tagUI.py
      ```
 
----
-
-## Estrutura do Projeto
-
-A estrutura do projeto é organizada da seguinte forma:
-
-teste-trajetoria/
-├── docs/                   # Pasta contendo arquivos de entrada/saída
-│   ├── ceps_lista_30.csv   # Arquivo CSV com a lista de CEPs para consulta
-│   ├── dados_ceps.csv      # Arquivo CSV com os dados extraídos dos CEPs
-│   └── relatorio_enderecos.pdf # Relatório consolidado em PDF
-├── .env/                   # Arquivo .env com as configs de xpath, api envio de email
-├── tasks/                  # Pasta para armazenar tarefas ou scripts relacionados
-│   ├── consulta_cep.py         # Módulo para consulta de CEPs
-│   ├── criar_relatorio.py      # Módulo para geração de relatórios PDF
-│   ├── enviar_email.py         # Módulo para envio de e-mails
-│   ├── tagui_task.py          # Módulo para tarefas usando TagUI                 
-├── .env_sample             # Modelo de arquivo de configuração de ambiente
-├── main.py                 # Script principal (Selenium)
-├── main_tagUI.py           # Script principal (TagUI)
-├── README.md               # Documentação principal do projeto
-└── requirements.txt        # Lista de dependências do projeto
 ---
 
 ## Melhorias e Limitações
